@@ -4,7 +4,7 @@
 
 import path from 'path';
 import webpack from 'webpack';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+// import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { merge } from 'webpack-merge';
@@ -37,31 +37,13 @@ export default merge(baseConfig, {
 
   module: {
     rules: [
-      // Extract all .global.css to style.css as is
-      {
-        test: /\.css$/,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              publicPath: './',
-            },
-          },
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-        ],
-      },
       // Pipe other styles through css modules and append to style.css
       {
         test: /\.css$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          // {
+          //   loader: MiniCssExtractPlugin.loader,
+          // },
           {
             loader: 'css-loader',
             options: {
@@ -77,9 +59,9 @@ export default merge(baseConfig, {
       {
         test: /\.(scss|sass)$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          // {
+          //   loader: MiniCssExtractPlugin.loader,
+          // },
           {
             loader: 'css-loader',
             options: {
@@ -99,9 +81,9 @@ export default merge(baseConfig, {
       {
         test: /\.(scss|sass)$/,
         use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-          },
+          // {
+          //   loader: MiniCssExtractPlugin.loader,
+          // },
           {
             loader: 'css-loader',
             options: {
@@ -213,9 +195,9 @@ export default merge(baseConfig, {
       E2E_BUILD: false,
     }),
 
-    new MiniCssExtractPlugin({
-      filename: 'style.css',
-    }),
+    // new MiniCssExtractPlugin({
+    //   filename: 'style.css',
+    // }),
 
     new BundleAnalyzerPlugin({
       analyzerMode:

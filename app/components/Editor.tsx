@@ -6,8 +6,9 @@ import React from 'react';
 /**
   Interface for Editor props
 */
-interface EditorProps {
+export interface EditorProps {
   children?: any;
+  onChange: (str: string) => void;
 }
 
 /**
@@ -22,7 +23,7 @@ const Editor: React.FC<EditorProps> = (props) => {
       theme="vs-dark"
       // value={code}
       // options={options}
-      // onChange={::this.onChange}
+      onChange={props.onChange}
       // editorDidMount={::this.editorDidMount}
     />
   );

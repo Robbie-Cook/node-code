@@ -2,6 +2,7 @@
  * Base webpack config used across other specific configs
  */
 
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin');
 import path from 'path';
 import webpack from 'webpack';
 import { dependencies as externals } from '../app/package.json';
@@ -45,7 +46,7 @@ export default {
     new MonacoWebpackPlugin({
       // available options are documented at https://github.com/Microsoft/monaco-editor-webpack-plugin#options
       languages: ['json', 'javascript', 'typescript'],
-    })
+    }),
 
     new webpack.NamedModulesPlugin(),
   ],

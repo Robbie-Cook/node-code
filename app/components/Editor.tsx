@@ -9,6 +9,7 @@ import React from 'react';
 export interface EditorProps {
   children?: any;
   onChange: (str: string) => void;
+  value?: string;
 }
 
 /**
@@ -21,7 +22,7 @@ const Editor: React.FC<EditorProps> = (props) => {
       height="600"
       language="javascript"
       theme="vs-dark"
-      // value={code}
+      value={props.value}
       // options={options}
       onChange={props.onChange}
       // editorDidMount={::this.editorDidMount}

@@ -15,6 +15,7 @@ interface InterfaceProps {
   A Interface component.
 */
 const Interface: React.FC<InterfaceProps> = (props) => {
+  const [text, setText] = React.useState('Enter text here');
   return (
     <section>
       <Pane
@@ -22,7 +23,7 @@ const Interface: React.FC<InterfaceProps> = (props) => {
           width: 50%;
         `}
       >
-        <Editor />
+        <Editor onChange={setText} value={text} />
       </Pane>
       <Pane
         css={css`

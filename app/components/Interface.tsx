@@ -17,10 +17,18 @@ interface InterfaceProps {
 const Interface: React.FC<InterfaceProps> = (props) => {
   return (
     <section>
-      <Pane>
+      <Pane
+        css={css`
+          width: 50%;
+        `}
+      >
         <Editor />
       </Pane>
-      <Pane></Pane>
+      <Pane
+        css={css`
+          width: 50%;
+        `}
+      ></Pane>
     </section>
   );
 };

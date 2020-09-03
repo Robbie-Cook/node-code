@@ -7,6 +7,7 @@ import React from 'react';
 */
 interface PaneProps {
   children?: any;
+  className?: string;
 }
 
 /**
@@ -15,11 +16,11 @@ interface PaneProps {
 const Pane: React.FC<PaneProps> = (props) => {
   return (
     <section
+      className={props.className}
       css={css`
         border-left: 1px solid black;
         border-right: 1px solid black;
         display: flex;
-        padding: 30px;
       `}
     >
       {props.children}

@@ -42,6 +42,10 @@ export default {
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'production',
     }),
+    new MonacoWebpackPlugin({
+      // available options are documented at https://github.com/Microsoft/monaco-editor-webpack-plugin#options
+      languages: ['json', 'javascript', 'typescript'],
+    })
 
     new webpack.NamedModulesPlugin(),
   ],

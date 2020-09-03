@@ -18,9 +18,9 @@ const Pane: React.FC<PaneProps> = (props) => {
     <section
       className={props.className}
       css={css`
-        border-left: 1px solid black;
-        border-right: 1px solid black;
-        display: flex;
+        /* border-left: 1px solid black;
+        border-right: 1px solid black; */
+        /* display: flex; */
       `}
     >
       {props.children}

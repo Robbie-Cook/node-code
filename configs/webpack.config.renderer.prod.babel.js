@@ -39,7 +39,7 @@ export default merge(baseConfig, {
     rules: [
       // Extract all .global.css to style.css as is
       {
-        test: /\.global\.css$/,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -57,7 +57,7 @@ export default merge(baseConfig, {
       },
       // Pipe other styles through css modules and append to style.css
       {
-        test: /^((?!\.global).)*\.css$/,
+        test: /\.css$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -75,7 +75,7 @@ export default merge(baseConfig, {
       },
       // Add SASS support  - compile all .global.scss files and pipe it to style.css
       {
-        test: /\.global\.(scss|sass)$/,
+        test: /\.(scss|sass)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -97,7 +97,7 @@ export default merge(baseConfig, {
       },
       // Add SASS support  - compile all other .scss files and pipe it to style.css
       {
-        test: /^((?!\.global).)*\.(scss|sass)$/,
+        test: /\.(scss|sass)$/,
         use: [
           {
             loader: MiniCssExtractPlugin.loader,
@@ -181,19 +181,19 @@ export default merge(baseConfig, {
     minimizer: process.env.E2E_BUILD
       ? []
       : [
-          new TerserPlugin({
-            parallel: true,
-            sourceMap: true,
-            cache: true,
-          }),
-          new OptimizeCSSAssetsPlugin({
-            cssProcessorOptions: {
-              map: {
-                inline: false,
-                annotation: true,
-              },
-            },
-          }),
+          // new TerserPlugin({
+          //   parallel: true,
+          //   sourceMap: true,
+          //   cache: true,
+          // }),
+          // new OptimizeCSSAssetsPlugin({
+          //   cssProcessorOptions: {
+          //     map: {
+          //       inline: false,
+          //       annotation: true,
+          //     },
+          //   },
+          // }),
         ],
   },
 

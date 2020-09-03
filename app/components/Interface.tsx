@@ -17,7 +17,12 @@ interface InterfaceProps {
 const Interface: React.FC<InterfaceProps> = (props) => {
   const [text, setText] = React.useState('Enter text here');
   return (
-    <section>
+    <section
+      css={css`
+        width: 1100px;
+        display: flex;
+      `}
+    >
       <Pane
         css={css`
           width: 50%;

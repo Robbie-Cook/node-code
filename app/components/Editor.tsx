@@ -18,7 +18,7 @@ export interface EditorProps {
 const Editor: React.FC<EditorProps> = (props) => {
   return (
     <MonacoEditor
-      width="800"
+      width="400"
       height="600"
       language="javascript"
       theme="vs-dark"

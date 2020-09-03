@@ -13,7 +13,16 @@ interface PaneProps {
  * A Pane component.
  */
 const Pane: React.FC<PaneProps> = (props) => {
-  return <div css={css``}>Pane component</div>;
+  return (
+    <section
+      css={css`
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+      `}
+    >
+      Pane component
+    </section>
+  );
 };
 
 export default Pane;

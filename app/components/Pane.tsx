@@ -16,11 +16,13 @@ const Pane: React.FC<PaneProps> = (props) => {
   return (
     <section
       css={css`
-        border-top: 1px solid black;
-        border-bottom: 1px solid black;
+        border-left: 1px solid black;
+        border-right: 1px solid black;
+        display: flex;
+        padding: 30px;
       `}
     >
-      Pane component
+      {props.children}
     </section>
   );
 };

@@ -25,7 +25,7 @@ const Interface: React.FC<InterfaceProps> = (props) => {
     >
       <Pane
         css={css`
-          width: 50%;
+          width: 600px;
         `}
       >
         <Editor onChange={setText} value={text} />
@@ -34,7 +34,9 @@ const Interface: React.FC<InterfaceProps> = (props) => {
         css={css`
           width: 50%;
         `}
-      ></Pane>
+      >
+        {text}
+      </Pane>
     </section>
   );
 };
